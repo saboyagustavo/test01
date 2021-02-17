@@ -4,6 +4,7 @@ let submitButton = null,
 window.addEventListener('load', init);
 function init() {
     mapInputs();
+    preventFormSubmit();
     activateInput();
     log(); //<form>, <button id="submit"
 }
@@ -25,27 +26,27 @@ function preventFormSubmit() {
 function activateInput() {
     input.focus();
     input.addEventListener('keyup', handleInput);
-}
 
-function handleInput(event) {
-    const currentKey = event.key;
-    const searchedNumber = event.target.value;
-    const hasValue = !!event.target.value && event.target.value.trim() !== '';
+    function handleInput(event) {
+        const currentKey = event.key;
+        const searchedNumber = event.target.value;
+        const hasValue = !!event.target.value && event.target.value.trim() !== '';
 
-    if (!hasValue) {
-        clearInput();
-        return;
+        if (!hasValue) {
+            clearInput();
+            return;
+        }
+
+        if (currentKey === 'Enter' && searchedNumber.trim() !== '') {
+            console.log(searchedNumber);
+            clearInput();
+        }
     }
 
-    if (currentKey === 'Enter' && searchedNumber.trim() !== '') {
-        console.log(searchedNumber);
-        clearInput();
+    function clearInput() {
+        input.value = '';
+        input.focus();
     }
-}
-
-function clearInput() {
-    input.value = '';
-    input.focus();
 }
 
 function log() {
