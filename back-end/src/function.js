@@ -1,5 +1,7 @@
-const validaNumero = numero => {
+const evenOddVerify = num => {
     let result = '';
-    numero % 2 === 0 ? (result = `O seu número ${numero} é par`) : (result = `O seu número ${numero} é ímpar`);
+    num % 2 === 0 ? (result = `O seu número ${num} é par`) : (result = `O seu número ${num} é ímpar`);
     return result;
 };
+
+module.exports = evenOddVerifier();

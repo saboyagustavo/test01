@@ -1,6 +1,6 @@
 const express = require('express');
 const validaNumero = require('./function');
-const path = require('https://http://127.0.0.1:5500');
+// const path = require('http://127.0.0.1:5500/?numeroDigitado=3');
 
 const app = express();
 app.get('/', function (req, res) {
