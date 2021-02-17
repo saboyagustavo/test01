@@ -4,7 +4,7 @@ const validaNumero = require('./function');
 
 const app = express();
 app.get('/', function (req, res) {
-    res.send(validaNumero());
+    res.send(validaNumero);
 });
 
 app.listen(3000);

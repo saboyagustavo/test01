@@ -4,4 +4,4 @@ const evenOddVerify = num => {
     return result;
 };
 
-module.exports = evenOddVerifier();
+module.exports = evenOddVerify();
